@@ -1,0 +1,446 @@
+body {
+  background-color: #242c34;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.verticalCenter {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.navLogin {
+  border-bottom: 2px solid rgb(255, 255, 255, 0.6);
+  height: 10vh;
+}
+
+.containerLogin {
+  height: 90vh;
+}
+
+.loginImg {
+  display: flex;
+  width: 100%;
+}
+
+.card {
+  background-color: rgb(255, 255, 255, 0.2);
+  padding: 2rem;
+  color: #fff;
+}
+
+.loginCard {
+  box-shadow: 4px 4px rgb(0, 0, 0, 0.2);
+}
+
+.loginCard Button {
+  background-color: #b8a471;
+  border-color: #b8a471;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.loginCard Button:hover {
+  background-color: #949eaa;
+  border-color: #949eaa;
+}
+
+.loginCard label {
+  text-align: left;
+  display: block;
+}
+
+.loginCard input {
+  background-color: rgb(255, 255, 255, 0.5);
+  border-color: rgb(255, 255, 255, 0.5);
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.loginCard a {
+  font-weight: 500;
+  color: #fff;
+}
+
+.loginCard a:hover {
+  text-decoration: underline;
+}
+
+.loginTitle {
+  font-weight: bold;
+}
+
+.layoutContainer {
+  display: flex;
+  flex-direction: column; /* Cambia a `column` si necesitas que crezca verticalmente */
+  height: calc(100vh - 2rem);
+  margin: 0;
+  overflow-y: auto;
+  margin-top: 15px;
+}
+.layoutContainer > .row {
+  flex-grow: 1; /* Toma todo el espacio disponible */
+  display: flex;
+}
+
+.layoutContainer > .row > .colContent {
+  min-height: 100%;
+  overflow: hidden; /* Asegura que no se desborde */
+  flex-grow: 1; /* Toma el espacio restante */
+}
+
+.lateralMenu {
+  border-right: 1px solid #fff;
+  padding: 2rem 0.5rem;
+  height: auto;
+  overflow-y: auto;
+  color: #fff;
+  min-width: 200px; /* Ajusta según el diseño */
+  max-width: 300px;
+}
+
+.lateralMenu img {
+  height: 100%;
+}
+
+.letter-small {
+  font-size: 14px;
+}
+
+.letter-smaller {
+  font-size: 10px;
+}
+
+.Button-gold-color {
+  background-color: #b8a471;
+  border-color: #b8a471;
+}
+
+.Button-red {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  width: 100%;
+}
+
+.card-initi {
+  height: 200px;
+}
+
+.card-img {
+  height: 60px;
+}
+
+.img-red {
+  width: 20px;
+  width: auto;
+  color: #fff;
+}
+
+.Button-red-color {
+  background-color: #843034;
+  border-color: #843034;
+}
+
+.navbar > .container {
+  display: block;
+  color: #fff;
+}
+
+.navbar-expand-lg .navbar-nav {
+  flex-direction: column;
+  width: 100%;
+}
+
+.navbar-toggler {
+  background-color: #b8a471;
+}
+
+.navbar-collapse {
+  width: 100%;
+}
+
+.navbar-nav {
+  width: 100%;
+}
+
+.nav-item.dropdown {
+  color: #fff !important;
+  width: 100%;
+}
+
+.nav-item.dropdown > a {
+  text-align: start;
+  font-size: 1.2rem;
+}
+.nav-item.dropdown a {
+  color: #fff !important;
+}
+
+.dropdown-menu {
+  background-color: rgb(0, 0, 0, 0);
+  border: 0;
+  width: 100%;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgb(255, 255, 255, 0.4);
+  border-left: 2px solid #fff;
+}
+
+.dark-list {
+  background-color: #373f47 !important;
+  color: white;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  border-bottom-color: #596068;
+}
+
+@media only screen and (min-width: 768px) {
+  .lateralMenu img {
+    width: 100%;
+  }
+}
+
+.image-rounded {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.Button-red {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  width: 100%;
+}
+
+.sideBarMain {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+.sideBarMain .Navbar.Brand {
+  margin-bottom: 1rem; /* Espacio debajo del logotipo */
+}
+
+.sideBarMain .Nav {
+  margin-bottom: 1rem; /* Espacio debajo de Dashboard */
+}
+
+.mt-auto {
+  margin-top: auto; /* Empuja los elementos al final */
+}
+
+.navbar-nav .dropdown-toggle::after {
+  vertical-align: middle; /* Alinea la flecha verticalmente con el texto */
+  margin-left: 0.5rem; /* Agrega un pequeño espacio entre el texto y la flecha */
+  position: relative; /* Asegura que la flecha esté en el mismo nivel */
+  top: 0; /* Ajusta la posición vertical */
+}
+
+.border-lateral {
+  border-right: 1px solid #fff;
+}
+
+.padding-logo-navbar {
+  padding-top: 13px;
+  padding-bottom: 15px;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.without-margin-bottom {
+  margin-bottom: 0;
+}
+
+*::-webkit-scrollbar{
+  width: 12px !important;
+}
+
+*::-webkit-scrollbar-track{
+  background: none !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(56, 68, 80) !important;
+  border: 3px solid rgba(255, 255, 255, 0.08) !important;
+  border-top-left-radius: 50px !important; 
+  border-bottom-left-radius: 50px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+@media (max-width: 720px) {
+  .padding-logo-navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .border-lateral{
+    border-right: none
+  }
+}
+
+.Button-red {
+  background-color: rgb(150, 66, 56);
+  color: #fff;
+  border: none;
+  width: 100%;
+}
+
+div.sb-sidenav-menu div.nav a.nav-link {
+  cursor: pointer;
+}
+
+.custom-checkbox .form-check-input {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white; /* Borde blanco */
+  background-color: transparent !important; /* Fondo transparente */
+  border-radius: 5px 5px 5px 5px; /* Mantiene un borde cuadrado */
+  appearance: none; /* Quita el diseño por defecto del navegador */
+}
+
+.custom-checkbox .form-check-input:checked {
+  background-color: transparent !important; /* Evita que se rellene */
+  border: 1px solid white; /* Mantiene el borde blanco */
+}
+
+.custom-checkbox .form-check-input:focus {
+  box-shadow: none; /* Evita el resaltado azul al hacer foco */
+}
+
+.custom-checkbox-th {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+
+table.spacing-table thead tr th, table.spacing-table tbody tr td {
+  line-height: 3;
+}
+
+.table-rounded {
+  border-radius: 10px;
+  overflow: hidden; /* Evita que los bordes se corten */
+}
+
+.icon-margin {
+  margin-bottom: 5px; /* Ajusta el valor según sea necesario */
+}
+
+.modal-content {
+  background-color: var(--bs-body-bg) !important;
+}
+
+.modal-header > button{
+  background-color: #fff;
+}
+
+.dark-input {
+  background-color: #373f47 !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.dark-input::placeholder {
+  color: #aaaaaa !important;
+}
+
+.dark-input:focus {
+  background-color: #2a2e37 !important;
+  color: #ffffff !important;
+  box-shadow: none;
+  border: 1px solid #444857 !important;
+}
+
+
+.dark-select {
+  background-color: #373f47 !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.dark-select::placeholder {
+  color: #aaaaaa !important;
+}
+
+.dark-select:focus {
+  background-color: #2a2e37 !important;
+  color: #ffffff !important;
+}
+
+.card-dark{
+  background-color: #2a2e37 !important;
+  color: #ffffff;
+}
+
+select {
+  appearance: none; /* Elimina la apariencia predeterminada del select */
+  -webkit-appearance: none; /* Para navegadores basados en WebKit como Safari */
+  -moz-appearance: none; /* Para navegadores basados en Gecko como Firefox */
+  background-image: url('/assets/selectarrow.svg') !important; 
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center; /* Posición de la flecha */
+  background-size: 16px 12px; /* Tamaño de la flecha */
+  padding-right: 2rem; /* Espacio para la flecha */
+  border: 1px solid #ccc; /* Borde opcional */
+  border-radius: 4px; /* Bordes redondeados opcionales */
+  color: white; /* Color del texto */
+  background-color: transparent; /* Fondo transparente o personalizado */
+}
+
+.custom-tooltip {
+  background-color: transparent !important;
+  color: white !important;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 150px;
+}
+
+/* Cambia el color de la flecha del tooltip */
+.custom-tooltip .tooltip-inner {
+  background-color: transparent !important;
+}
+
+.custom-tooltip .arrow::before {
+  border-top-color: red !important; /* Para tooltip arriba */
+  border-bottom-color: red !important; /* Para tooltip abajo */
+  border-left-color: red !important; /* Para tooltip izquierda */
+  border-right-color: red !important; /* Para tooltip derecha */
+}
+
+.backdrop-iarealty > div.modal-dialog > div.modal-content{
+  background-color: transparent !important;
+  border: none !important;
+}
