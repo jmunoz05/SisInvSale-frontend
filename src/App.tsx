@@ -1,10 +1,4 @@
-import React from "react";
+import React from 'react';
+import AppRouter from './routes/AppRouter';
 
-export const App: React.FC = () => {
-    return (<>
-        <div className="App">
-        <h1>Welcome to the App</h1>
-        <p>This is a simple React application.</p>
-        </div>
-         </>)
-}
+export const App: React.FC = () => <AppRouter />;
