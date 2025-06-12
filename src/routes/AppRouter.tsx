@@ -1,23 +1,25 @@
 import { Routes, Route } from 'react-router-dom';
 import { Login } from '../pages/Login';
-import { Dashboard } from '../pages/Dashboard';
 import { Producto } from '../pages/Producto';
 import { Cliente } from '../pages/Cliente';
 import { Venta } from '../pages/Venta';
 import { PrivateRoute } from './PrivateRoute';
+import React from "react";
+import { Layout } from '../components/layout/Layout';
+import { Home } from '../pages/Home';
 
 
-const AppRouter = () => (
+export const AppRouter: React.FC = () => (
   <Routes>
     <Route path="/login" element={<Login />} />
 
     <Route element={<PrivateRoute />}>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/productos" element={<Producto />} />
-      <Route path="/clientes" element={<Cliente />} />
-      <Route path="/ventas" element={<Venta />} />
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="productos" element={<Producto />} />
+        <Route path="clientes" element={<Cliente />} />
+        <Route path="ventas" element={<Venta />} />
+      </Route>
     </Route>
   </Routes>
 );
-
-export default AppRouter;

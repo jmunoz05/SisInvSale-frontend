@@ -14,7 +14,8 @@ import {
   FormControlLabel,
   TextField,
   Typography,
-  Link
+  Link,
+  Switch
 } from "@mui/material";
 
 export const Login: React.FC = () => {
@@ -35,28 +36,34 @@ export const Login: React.FC = () => {
   };
 
   return (
-
-    
     <Box
-       sx={{
-        width: '100vw',
-        height: '100vh',
+      sx={{
+        width: "100vw",
+        height: "100vh",
         backgroundImage: `url(${bgImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        position: 'relative',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      <Card sx={{ width: 400, borderRadius: 3, boxShadow: 5 }}>
+      <Card
+        sx={{
+          width: 400,
+          borderRadius: 3,
+          boxShadow: 5,
+          paddingTop: 3,
+          paddingLeft: 1,
+          paddingRight: 1,
+          paddingBottom: 1,
+        }}
+      >
         <CardContent>
-          <Typography variant="h6" sx={{ mb: 2 }}>
-            Email
-          </Typography>
           <TextField
+            label="Email"
             fullWidth
             placeholder="Enter email"
             defaultValue="SALAdmin"
@@ -65,10 +72,8 @@ export const Login: React.FC = () => {
             sx={{ mb: 2 }}
           />
 
-          <Typography variant="h6" sx={{ mb: 2 }}>
-            Password
-          </Typography>
           <TextField
+            label="Password"
             fullWidth
             type="password"
             placeholder="Enter password"
@@ -79,7 +84,18 @@ export const Login: React.FC = () => {
           />
 
           <FormControlLabel
-            control={<Checkbox />}
+            control={
+              <Switch
+                sx={{
+                  "& .MuiSwitch-switchBase.Mui-checked": {
+                    color: "#424242",
+                  },
+                  "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
+                    backgroundColor: "#424242",
+                  },
+                }}
+              />
+            }
             label="Remember me"
             sx={{ mb: 2 }}
           />
@@ -105,8 +121,6 @@ export const Login: React.FC = () => {
           </Typography>
         </CardContent>
       </Card>
-
-
     </Box>
   );
 };
