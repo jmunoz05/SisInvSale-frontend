@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Box, Chip, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
+import { Tooltip, IconButton } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import { ActionMenu } from "../components/ActionMenu";
+import EditIcon from '@mui/icons-material/Edit';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export const Home: React.FC = () => {
   const [paginationModel, setPaginationModel] = useState({
@@ -39,6 +45,31 @@ export const Home: React.FC = () => {
         />
       ),
     },
+      {
+    field: 'acciones',
+    headerName: '',
+    sortable: false,
+    filterable: false,
+    disableColumnMenu: true,
+    align: 'right',
+    renderCell: (params:any) => <ActionMenu row={params.row} actions={[
+          {
+            label: 'Editar',
+            icon: <EditIcon fontSize="small" />,
+            onClick: (row) => console.log('Editar producto', row),
+          },
+          {
+            label: 'Detalles',
+            icon: <VisibilityIcon fontSize="small" />,
+            onClick: (row) => console.log('Ver detalles', row),
+          },
+          {
+            label: 'Eliminar',
+            icon: <DeleteIcon fontSize="small" />,
+            onClick: (row) => console.log('Eliminar producto', row),
+          },
+        ]} />
+  }
   ];
 
   const rows = productos.map((p) => ({ ...p, id: p.id }));
@@ -63,7 +94,7 @@ export const Home: React.FC = () => {
             borderRadius: 2,
             backgroundColor: "white",
             boxShadow: 2,
-            pt: 6
+            pt: 6,
           }}
         >
           <Box
@@ -77,13 +108,36 @@ export const Home: React.FC = () => {
               py: 2,
               borderRadius: 2,
               boxShadow: 3,
-              width: "88%"
+              width: "88%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
             }}
           >
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               Productos
             </Typography>
+
+            <Tooltip title="Agregar producto" arrow>
+            <IconButton
+              sx={{
+                color: "white",
+                backgroundColor: "#2e7d32",
+                "&:hover": {
+                  backgroundColor: "#00D100",
+                },
+                ml: 2,
+              }}
+              onClick={() => {
+                console.log("Agregar producto");
+              }}
+            >
+              <AddIcon />
+            </IconButton>
+          </Tooltip>
           </Box>
+
+          
 
           {/* Tabla */}
           <Box sx={{ p: 2 }}>
@@ -95,6 +149,12 @@ export const Home: React.FC = () => {
               onPaginationModelChange={setPaginationModel}
               pageSizeOptions={[5, 10, 20, 50, 100]}
               sx={{
+                    '& .MuiDataGrid-cell:focus': {
+                    outline: 'none',
+                    },
+                    '& .MuiDataGrid-cell:focus-within': {
+                  outline: 'none',
+            },
                 border: "none", // quita el borde general
                 "& .MuiDataGrid-columnHeaders": {
                   borderBottom: "1px solid #e0e0e0", // opcional: borde inferior para headers
@@ -105,6 +165,7 @@ export const Home: React.FC = () => {
                 "& .MuiDataGrid-cell": {
                   border: "none", // quita el borde de cada celda
                 },
+                
               }}
               disableRowSelectionOnClick
             />
