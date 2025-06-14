@@ -1,50 +1,55 @@
 import React from "react";
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Box, Button, Typography } from "@mui/material";
-import {
-  Dashboard,
-  TableChart,
-  Receipt,
-  Language,
-  Notifications,
-  Person,
-  Login,
-  HowToReg,
-} from "@mui/icons-material";
+import { Drawer, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import {  Dashboard } from "@mui/icons-material";
+import GroupIcon from '@mui/icons-material/Group';
+import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
+import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import { useNavigate } from "react-router-dom";
+import type { MenuItem } from "../../utils/interfaces";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 export const SideBarComponent: React.FC = () => {
+ 
+ const navigate = useNavigate();
+
+  const menuItems: MenuItem[] = [
+    { text: "Dashboard", icon: <Dashboard />, path: "/" },
+    { text: "Productos", icon: <CategoryOutlinedIcon />, path: "/productos" },
+    { text: "Clientes", icon: <GroupIcon />, path: "/clientes" },
+    { text: "Ventas", icon: <MonetizationOnOutlinedIcon />, path: "/ventas" },
+    { text: "Logout", icon: <LogoutOutlinedIcon />, path: "/logout" },
+  ];
+ 
+ 
+ 
+ 
   return (
     <Drawer
       variant="permanent"
       sx={{
         width: drawerWidth,
-        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box', background: 'linear-gradient(195deg, #42424a, #191919);', color: 'white' }
+        [`& .MuiDrawer-paper`]: { 
+          width: drawerWidth,
+          boxSizing: 'border-box',
+          background: 'linear-gradient(200deg,rgba(245, 144, 66, 0.9),rgb(255, 140, 0));',
+          color: 'white',
+          marginTop: '54px',
+          height: 'calc(100% - 54px)',
+          paddingTop: '26px'
+
+        }
       }}
     >
-      <Box p={2}>
-        <Typography variant="h6" color="white">Material Dashboard 2</Typography>
-      </Box>
       <List>
-        {[
-          { text: "Dashboard", icon: <Dashboard /> },
-          { text: "Tables", icon: <TableChart /> },
-          { text: "Billing", icon: <Receipt /> },
-          { text: "RTL", icon: <Language /> },
-          { text: "Notifications", icon: <Notifications /> },
-          { text: "Profile", icon: <Person /> },
-          { text: "Sign In", icon: <Login /> },
-          { text: "Sign Up", icon: <HowToReg /> },
-        ].map(({ text, icon }) => (
-          <ListItem key={text}>
-            <ListItemIcon sx={{ color: 'white' }}>{icon}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Box p={2}>
-        <Button variant="contained" fullWidth color="primary">Upgrade to Pro</Button>
-      </Box>
+      {menuItems.map(({ text, icon, path }) => (
+        <ListItemButton key={text} onClick={() => navigate(path)}>
+          <ListItemIcon sx={{ color: "white" }}>{icon}</ListItemIcon>
+          <ListItemText primary={text} />
+        </ListItemButton>
+      ))}
+    </List>
     </Drawer>
   );
 };

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getData = async (url: string, headers:any={}) => {
     try {
-        return await axios.get(url, {headers: headers});
+        return (await axios.get(url, {headers: headers}));
     } catch (error) {
         console.error('Error fetching data:', error);
         throw error;

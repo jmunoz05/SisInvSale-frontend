@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { Login } from '../pages/Login';
-import { Producto } from '../pages/Producto';
-import { Cliente } from '../pages/Cliente';
-import { Venta } from '../pages/Venta';
+import { Producto } from '../pages/modules/Producto/Producto';
+import { Cliente } from '../pages/modules/Cliente/Cliente';
+import { Venta } from '../pages/modules/Venta';
 import { PrivateRoute } from './PrivateRoute';
 import React from "react";
 import { Layout } from '../components/layout/Layout';

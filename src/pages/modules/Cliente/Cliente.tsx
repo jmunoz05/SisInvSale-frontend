@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Typography } from '@mui/material';
-import { setToken, obtenerClientes } from '../services/clienteservice';
-import { useAuth } from '../context/AuthContext';
+import { setToken, obtenerClientes } from '../../../services/clienteservice';
+import { useAuth } from '../../../context/AuthContext';
 
 export const Cliente:React.FC = () => {
 
